@@ -37,6 +37,8 @@ market capitalizations, and view real-time trading volumes across multiple block
 .
 ├── backend
 │   ├── build.gradle
+│   ├── docker-compose.yaml
+│   ├── Dockerfile
 │   ├── gradle
 │   │   └── wrapper
 │   │       ├── gradle-wrapper.jar
@@ -49,9 +51,19 @@ market capitalizations, and view real-time trading volumes across multiple block
 │       │   ├── java
 │       │   │   └── com
 │       │   │       └── backend
-│       │   │           └── BackendApplication.java
+│       │   │           ├── BackendApplication.java
+│       │   │           ├── config
+│       │   │           │   └── WebConfiguration.java
+│       │   │           ├── entity
+│       │   │           │   ├── User.java
+│       │   │           │   └── Watchlist.java
+│       │   │           ├── middleware
+│       │   │           │   └── AuthenticationService.java
+│       │   │           ├── repository
+│       │   │           │   └── UserRepository.java
+│       │   │           └── service
 │       │   └── resources
-│       │       ├── application.properties
+│       │       ├── application.yaml
 │       │       ├── static
 │       │       └── templates
 │       └── test
@@ -63,9 +75,11 @@ market capitalizations, and view real-time trading volumes across multiple block
 │   ├── AGENTS.md
 │   ├── CLAUDE.md
 │   ├── eslint.config.mjs
+│   ├── eslint.config.mts
 │   ├── next.config.ts
 │   ├── package-lock.json
 │   ├── package.json
+│   ├── prettier.config.ts
 │   ├── public
 │   │   ├── file.svg
 │   │   ├── globe.svg
@@ -75,12 +89,52 @@ market capitalizations, and view real-time trading volumes across multiple block
 │   ├── README.md
 │   ├── src
 │   │   ├── app
-│   │   │   ├── favicon.ico
+│   │   │   ├── (auth)
+│   │   │   │   ├── layout.tsx
+│   │   │   │   ├── login
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── page.tsx
+│   │   │   │   └── signup
+│   │   │   │       └── page.tsx
+│   │   │   ├── (main)
+│   │   │   │   ├── calculator
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── dashboard
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── layout.tsx
+│   │   │   │   └── watchlist
+│   │   │   │       └── page.tsx
 │   │   │   ├── globals.css
-│   │   │   ├── layout.tsx
-│   │   │   ├── page.module.css
-│   │   │   └── page.tsx
-│   │   └── components
+│   │   │   └── layout.tsx
+│   │   ├── components
+│   │   │   ├── calculator
+│   │   │   │   ├── calculate.tsx
+│   │   │   │   ├── calculateDisplay.tsx
+│   │   │   │   ├── calculateHeader.tsx
+│   │   │   │   └── calculateInput.tsx
+│   │   │   ├── dashboard
+│   │   │   ├── general
+│   │   │   │   ├── navbar.tsx
+│   │   │   │   ├── sidebar.tsx
+│   │   │   │   └── themeToggle.tsx
+│   │   │   ├── home
+│   │   │   │   ├── hero.tsx
+│   │   │   │   └── nav.tsx
+│   │   │   └── watchlist
+│   │   │       ├── content.tsx
+│   │   │       └── statistics.tsx
+│   │   ├── config.ts
+│   │   ├── context
+│   │   │   └── ThemeContext.tsx
+│   │   ├── data
+│   │   │   ├── calculator.ts
+│   │   │   ├── home.ts
+│   │   │   ├── navbar.ts
+│   │   │   └── watchlist.ts
+│   │   ├── hooks
+│   │   ├── libs
+│   │   ├── theme.ts
+│   │   └── types.ts
 │   └── tsconfig.json
 └── README.md
 ```
@@ -103,7 +157,7 @@ You can find the required environment variables in `.env.example`.
 
 > [!NOTE]
 > There are more than one `.env.example` files. 
-> Hence configure them each with respect to the directories accordingly.
+> Configure them each with respect to the frontend/backend directory accordingly.
 
 ### Start Development Environment
 
