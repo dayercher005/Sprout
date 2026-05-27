@@ -1,7 +1,7 @@
 # Sprout
-Sprout is a light-weight real-time data-driven web application designed for NFT and cryptocurrency pricing analysis. 
+Sprout is a light-weight data-driven web application designed for NFT and cryptocurrency pricing analysis. 
 This platform provides a centralized dashboard to discover trending NFT collections, track historical floor prices, analyze
-market capitalizations, and view real-time trading volumes across multiple blockchain networks.
+market capitalizations, and view trading volumes across multiple blockchain networks.
 
 ## ✨ Key Features
 - Multi-Chain Comparison: Compare collection entry points side-by-side across Ethereum, Solana, and Polygon in a unified view.
@@ -18,7 +18,6 @@ market capitalizations, and view real-time trading volumes across multiple block
 
 - Next.js
 - React.js
-- Tanstack Query
 - Typescript
 - Material-UI (MUI)
 
@@ -111,7 +110,6 @@ You can find the required environment variables in `.env.example`.
 
 - Install Dependencies
 ```bash
-cd frontend
 npm i
 ```
 
@@ -124,7 +122,7 @@ npm run dev
 
 ### Local URLs
 
-- Frontend Application
+- Next.js Application
 ```bash
 http://localhost:3000
 ```
