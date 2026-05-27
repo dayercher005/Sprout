@@ -12,12 +12,7 @@ export const GITHUB_CLIENT_ID: string = process.env.GITHUB_CLIENT_ID as string;
 export const GITHUB_CLIENT_SECRET: string = process.env
   .GITHUB_CLIENT_SECRET as string;
 
-export const COINGEKKO_SERVICE_URL: string = process.env
-  .COINGEKKO_SERVICE_URL as string;
-export const COINGEKKO_API_KEY: string = process.env
-  .COINGEKKO_API_KEY as string;
-
-export const COINMARKETCAP_SERVICE_URL: string = process.env
-  .COINMARKETCAP_SERVICE_URL as string;
-export const COINMARKETCAP_API_KEY: string = process.env
-  .COINMARKET_API_KEY as string;
+export const COINGECKO_SERVICE_URL: string = process.env
+  .COINGECKO_SERVICE_URL as string;
+export const COINGECKO_API_KEY: string = process.env
+  .COINGECKO_API_KEY as string;
