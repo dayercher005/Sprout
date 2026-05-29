@@ -1,6 +1,8 @@
 "use client";
 
 import * as React from "react";
+import { signIn } from "next-auth/react";
+import { useSearchParams } from "next/navigation";
 import {
   Box,
   Button,
@@ -66,6 +68,9 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
   const [passwordErrorMessage, setPasswordErrorMessage] = React.useState("");
   const [nameError, setNameError] = React.useState(false);
   const [nameErrorMessage, setNameErrorMessage] = React.useState("");
+
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callbackUrl") ?? "/dashboard";
 
   const validateInputs = () => {
     const email = document.getElementById("email") as HTMLInputElement;
@@ -134,7 +139,7 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
             textAlign: "center"
           }}
         >
-          Sign up
+          Log In
         </Typography>
         <Box
           component='form'
@@ -188,16 +193,16 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
           <Button
             fullWidth
             variant='outlined'
-            onClick={() => alert("Sign up with Google")}
+            onClick={() => signIn("google", { callbackUrl })}
             startIcon={<FcGoogle />}
           >
-            Log in with Google
+            Sign in with Google
           </Button>
           <Button
             fullWidth
             variant='outlined'
-            onClick={() => alert("Sign up with Github")}
-            startIcon={<FaGithub color='#131313' />}
+            onClick={() => signIn("github", { callbackUrl })}
+            startIcon={<FaGithub color='primary' />}
           >
             Sign in with Github
           </Button>
