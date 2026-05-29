@@ -7,6 +7,14 @@ export async function TopCollection() {
   const CoinMarketData = await CoinHandlers.getCoinList();
   const TopCoinMarketData = CoinMarketData[0];
 
+  const TopCoinMarketDataArray = [
+    TopCoinMarketData.market_cap,
+    TopCoinMarketData.market_cap_rank,
+    TopCoinMarketData.total_volume,
+    TopCoinMarketData.total_supply,
+    TopCoinMarketData.ath
+  ];
+
   return (
     <Paper sx={{ p: 3 }}>
       <Box
@@ -24,8 +32,8 @@ export async function TopCollection() {
       </Box>
 
       <Grid container spacing={2} sx={{ mt: 2 }}>
-        {TopCollectionData.labels.map((item) => (
-          <Grid key={item.label}>
+        {TopCollectionData.labels.map(({ label }, index) => (
+          <Grid key={label}>
             <Box
               sx={{
                 p: 2,
@@ -34,10 +42,10 @@ export async function TopCollection() {
               }}
             >
               <Typography variant='caption' sx={{ color: "#c4b5fd" }}>
-                {item.label}
+                {label}
               </Typography>
               <Typography variant='body1' color='white'>
-                {TopCoinMarketData[item.key]}
+                {TopCoinMarketDataArray[index]}
               </Typography>
             </Box>
           </Grid>
