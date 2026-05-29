@@ -4,11 +4,11 @@ export const DashboardData = {
   },
   topCollection: {
     labels: [
-      { label: "Market Cap", key: "market_cap" },
-      { label: "Listed", key: "market_cap_rank" },
-      { label: "Total Volume", key: "total_volume" },
-      { label: "Total Supply", key: "total_supply" },
-      { label: "All Time High", key: "ath" }
+      { label: "Market Cap" },
+      { label: "Listed" },
+      { label: "Total Volume" },
+      { label: "Total Supply" },
+      { label: "All Time High" }
     ]
   }
 };
