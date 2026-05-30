@@ -16,8 +16,9 @@ market capitalizations, and view trading volumes across multiple blockchain netw
 
 ## 🛠️ Tech Stack:
 
-- Next.js
 - React.js
+- Next.js
+- NextAuth.js
 - Typescript
 - Material-UI (MUI)
 
@@ -53,6 +54,12 @@ market capitalizations, and view trading volumes across multiple blockchain netw
 │   │   │   ├── layout.tsx
 │   │   │   └── watchlist
 │   │   │       └── page.tsx
+│   │   ├── api
+│   │   │   └── auth
+│   │   │       ├── [...nextauth]
+│   │   │       │   └── route.ts
+│   │   │       └── signup
+│   │   │           └── route.ts
 │   │   ├── globals.css
 │   │   └── layout.tsx
 │   ├── components
@@ -62,6 +69,8 @@ market capitalizations, and view trading volumes across multiple blockchain netw
 │   │   │   ├── calculateHeader.tsx
 │   │   │   └── calculateInput.tsx
 │   │   ├── dashboard
+│   │   │   ├── topCollection.tsx
+│   │   │   └── trendingCollections.tsx
 │   │   ├── general
 │   │   │   ├── navbar.tsx
 │   │   │   ├── sidebar.tsx
@@ -78,15 +87,23 @@ market capitalizations, and view trading volumes across multiple blockchain netw
 │   │       └── statistics.tsx
 │   ├── config.ts
 │   ├── context
-│   │   └── themeContext.ts
 │   ├── data
 │   │   ├── calculator.ts
+│   │   ├── dashboard.ts
 │   │   ├── home.ts
+│   │   ├── login.ts
 │   │   ├── navbar.ts
+│   │   ├── signup.ts
 │   │   └── watchlist.ts
 │   ├── hooks
-│   │   └── theme.ts
 │   ├── libs
+│   │   ├── auth.ts
+│   │   ├── coins.ts
+│   │   ├── db.ts
+│   │   ├── index.ts
+│   │   ├── nft.ts
+│   │   └── schema.sql
+│   ├── theme.ts
 │   └── types.ts
 └── tsconfig.json
 ```
