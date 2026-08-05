@@ -133,9 +133,11 @@ market capitalizations, and view trading volumes.
 │   │       └── menubar.ts
 │   ├── migrations
 │   │   ├── 0000_solid_speedball.sql
+│   │   ├── 0001_round_marrow.sql
 │   │   └── meta
 │   │       ├── _journal.json
-│   │       └── 0000_snapshot.json
+│   │       ├── 0000_snapshot.json
+│   │       └── 0001_snapshot.json
 │   ├── proxy.ts
 │   ├── theme.ts
 │   └── types.ts
